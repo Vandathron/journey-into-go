@@ -35,6 +35,7 @@ func main() {
 	fmt.Printf("Type: %T Value: %v\n", maxInt, maxInt)
 	fmt.Printf("Type: %T Value: %v\n", z, z)
 	switchCase()
+	pointers()
 }
 
 func sayhi(x, y, z int) {
@@ -83,4 +84,27 @@ func switchCase() {
 		// freebsd, openbsd
 		fmt.Println("Windows")
 	}
+}
+
+func pointers() {
+	var p *int
+	println(p)
+
+	v := 20
+
+	var pointerOfV = &v
+	println(*pointerOfV * 10)
+
+	println(p)
+
+	a := 10
+	var pointerOfA = &a
+	b := 30
+	var pointerOfB = &b
+	pointerOfA = pointerOfB
+	println(a)
+	var g = &a
+	*g = 20
+	println(a)
+	println(pointerOfA)
 }
