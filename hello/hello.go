@@ -59,4 +59,11 @@ func whileLoop() {
 		println(sum)
 		sum += 2
 	}
+	ifFunction()
+}
+
+func ifFunction() {
+	if v := 2; v == 2 {
+		println("Hell0")
+	}
 }
