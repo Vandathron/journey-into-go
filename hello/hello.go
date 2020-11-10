@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"math/cmplx"
+	"runtime"
 
 	"example.com/greetings"
 )
@@ -33,6 +34,7 @@ func main() {
 	fmt.Printf("Type: %T Value: %v\n", ToBe, ToBe)
 	fmt.Printf("Type: %T Value: %v\n", maxInt, maxInt)
 	fmt.Printf("Type: %T Value: %v\n", z, z)
+	switchCase()
 }
 
 func sayhi(x, y, z int) {
@@ -65,5 +67,20 @@ func whileLoop() {
 func ifFunction() {
 	if v := 2; v == 2 {
 		println("Hell0")
+	}
+
+	switchCase()
+}
+
+func switchCase() {
+	switch v := runtime.GOOS; v {
+	case "darwin":
+		fmt.Println("Darwing")
+		break
+	case "linux":
+		fmt.Println("Linux")
+	default:
+		// freebsd, openbsd
+		fmt.Println("Windows")
 	}
 }
