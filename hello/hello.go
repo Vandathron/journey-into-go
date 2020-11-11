@@ -7,6 +7,7 @@ import (
 	"runtime"
 
 	"example.com/greetings"
+	"example.com/types"
 )
 
 var i, j int = 1, 2
@@ -36,6 +37,9 @@ func main() {
 	fmt.Printf("Type: %T Value: %v\n", z, z)
 	switchCase()
 	pointers()
+	types.PrintStruct()
+	whileLoop()
+	types.Mapping()
 }
 
 func sayhi(x, y, z int) {
@@ -62,11 +66,17 @@ func whileLoop() {
 		println(sum)
 		sum += 2
 	}
-	ifFunction()
+	ifFunction(3)
+
+	pow := []int{2, 5, 3, 5, 6, 5}
+
+	for _, v := range pow {
+		println(v)
+	}
 }
 
-func ifFunction() {
-	if v := 2; v == 2 {
+func ifFunction(v int) {
+	if v == 2 {
 		println("Hell0")
 	}
 
