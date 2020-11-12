@@ -35,11 +35,15 @@ func main() {
 	fmt.Printf("Type: %T Value: %v\n", ToBe, ToBe)
 	fmt.Printf("Type: %T Value: %v\n", maxInt, maxInt)
 	fmt.Printf("Type: %T Value: %v\n", z, z)
-	switchCase()
-	pointers()
-	types.PrintStruct()
-	whileLoop()
 	types.Mapping()
+
+	v := &Vertex{3, 4}
+	x := Vertex{2, 2}
+	x.Scale(10)
+	v.Scale(10)
+	fmt.Println(v.Abs(), x.Abs())
+
+	Oya()
 }
 
 func sayhi(x, y, z int) {
